@@ -1,0 +1,121 @@
+---
+import { ArrowUpRight, Clock, MapPin, Zap } from 'lucide-astro';
+---
+
+<section class="relative min-h-screen flex items-center justify-center bg-white pt-24 overflow-hidden" id="hero">
+    <!-- Clean minimal patterns -->
+    <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 -z-10"></div>
+    
+    <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+        <!-- Floating Tagline -->
+        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 bg-white border border-gray-100 rounded-full shadow-sm mb-12 animate-fade-in-down">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+            </span>
+            <span class="text-[12px] font-extrabold text-blue-600 uppercase tracking-[0.2em]">Bootcamp 2026</span>
+        </div>
+        
+        <h1 class="max-w-5xl text-5xl md:text-8xl lg:text-9xl font-black text-[#001F3F] leading-[0.9] tracking-tighter uppercase italic font-montserrat mb-10 overflow-hidden">
+            <span class="block animate-slide-up-heading">MEET THE</span>
+            <span class="block text-blue-600 animate-slide-up-heading delay-100 italic">NEW EXECOM.</span>
+        </h1>
+
+        <p class="max-w-2xl text-lg md:text-xl text-gray-500 font-medium leading-relaxed mb-12 animate-fade-in opacity-0 fill-mode-forwards" style="animation-delay: 500ms">
+            Join the flagship event of IEDC CEV. An intensive bootcamp designed to introduce 
+            our new executive committee and strategize the future of innovation on campus.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-6 mb-20 animate-fade-in opacity-0 fill-mode-forwards" style="animation-delay: 700ms">
+            <a href="/register" class="group bg-blue-600 border-2 border-blue-600 hover:bg-black hover:border-black text-white px-12 py-5 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 active:scale-95 shadow-2xl shadow-blue-500/10 flex items-center gap-3 font-bold text-lg uppercase tracking-wider">
+                Get Your Pass
+                <ArrowUpRight class="w-5 h-5 group-hover:rotate-45 transition-transform" />
+            </a>
+            <a href="#about" class="px-12 py-5 border-2 border-gray-100 hover:border-blue-600 hover:bg-blue-50/30 rounded-2xl transition-all duration-300 font-bold text-lg text-gray-700">
+                Learn More
+            </a>
+        </div>
+
+        <!-- Minimal Timer View -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-12 py-10 px-12 bg-[#fafafa] border border-gray-100 rounded-[2.5rem] animate-fade-in opacity-0 fill-mode-forwards shadow-sm" style="animation-delay: 900ms">
+             <div class="flex flex-col items-center">
+                 <span class="text-4xl md:text-6xl font-black text-gray-900 font-montserrat" id="days">00</span>
+                 <span class="text-[10px] uppercase font-bold text-gray-400 tracking-[0.3em] mt-2">Days</span>
+             </div>
+             <div class="flex flex-col items-center">
+                 <span class="text-4xl md:text-6xl font-black text-gray-900 font-montserrat" id="hours">00</span>
+                 <span class="text-[10px] uppercase font-bold text-gray-400 tracking-[0.3em] mt-2">Hours</span>
+             </div>
+             <div class="flex flex-col items-center">
+                 <span class="text-4xl md:text-6xl font-black text-gray-900 font-montserrat" id="minutes">00</span>
+                 <span class="text-[10px] uppercase font-bold text-gray-400 tracking-[0.3em] mt-2">Mins</span>
+             </div>
+             <div class="flex flex-col items-center">
+                 <span class="text-4xl md:text-6xl font-black text-blue-600 font-montserrat italic" id="seconds">00</span>
+                 <span class="text-[10px] uppercase font-bold text-gray-300 tracking-[0.3em] mt-2">Secs</span>
+             </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes slide-up-heading {
+        from { transform: translateY(100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fade-in-down {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .animate-slide-up-heading { animation: slide-up-heading 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .animate-fade-in-down { animation: fade-in-down 1s ease-out forwards; }
+    .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+    .delay-100 { animation-delay: 100ms; }
+    .fill-mode-forwards { animation-fill-mode: forwards; }
+</style>
+
+<script>
+    function updateCountdown() {
+        const targetDate = new Date('2026-03-29T09:00:00').getTime();
+        
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+            
+            if (difference < 0) {
+                clearInterval(timer);
+                return;
+            }
+            
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById('days')!.innerText = String(d).padStart(2, '0');
+            document.getElementById('hours')!.innerText = String(h).padStart(2, '0');
+            document.getElementById('minutes')!.innerText = String(m).padStart(2, '0');
+            document.getElementById('seconds')!.innerText = String(s).padStart(2, '0');
+        }, 1000);
+    }
+
+    updateCountdown();
+</script>
+
+<style>
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-in-right {
+        from { opacity: 0; transform: translateX(30px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-fade-in-up { animation: fade-in-up 1s ease-out forwards; }
+    .animate-fade-in-right { animation: fade-in-right 1s ease-out 0.3s forwards; opacity: 0; }
+</style>

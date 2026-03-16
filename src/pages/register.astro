@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import { User, Mail, School, GraduationCap, ChevronRight, CheckCircle2 } from 'lucide-astro';
+---
+
+<Layout title="Register | IEDC Bootcamp 2026">
+    <Navbar />
+    
+    <main class="min-h-screen pt-32 pb-20 bg-white relative overflow-hidden flex items-center">
+        <!-- Background accents -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-100/50 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4 -z-10"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-stretch gap-12 max-w-6xl mx-auto border-2 border-[#001F3F]/5 rounded-[3rem] overflow-hidden bg-white shadow-2xl shadow-blue-900/10">
+                
+                <!-- Info Section -->
+                <div class="lg:w-2/5 bg-[#001F3F] p-10 md:p-16 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="relative z-10 transition-all duration-500 animate-fade-in">
+                        <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-blue-400 mb-6 italic animate-slide-right">Bootcamp 2026</h2>
+                        <h3 class="text-4xl md:text-5xl font-black font-montserrat uppercase italic leading-none mb-8">
+                            Register <span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">to build</span>
+                        </h3>
+                        
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4 group cursor-default">
+                                <div class="bg-blue-600/20 p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
+                                    <CheckCircle2 class="w-5 h-5 text-blue-400 group-hover:text-white" />
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="font-bold text-lg font-montserrat uppercase italic">Execom Induction</p>
+                                    <p class="text-sm text-blue-200/70">Witness the official hand-over to the new leadership team.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4 group cursor-default">
+                                <div class="bg-blue-600/20 p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
+                                    <CheckCircle2 class="w-5 h-5 text-blue-400 group-hover:text-white" />
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="font-bold text-lg font-montserrat uppercase italic">Vision Boarding</p>
+                                    <p class="text-sm text-blue-200/70">Co-design the action plan for major campus events in 2026.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4 group cursor-default">
+                                <div class="bg-blue-600/20 p-2 rounded-lg group-hover:bg-blue-600 transition-colors">
+                                    <CheckCircle2 class="w-5 h-5 text-blue-400 group-hover:text-white" />
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="font-bold text-lg font-montserrat uppercase italic">Global Reach</p>
+                                    <p class="text-sm text-blue-200/70">Join a community recognized by state and national bodies.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Decorative graphic -->
+                    <div class="mt-16 opacity-10 font-black text-9xl absolute -bottom-10 -right-10 pointer-events-none italic font-montserrat">IEDC</div>
+                </div>
+
+                <!-- Registration Form Section -->
+                <div class="lg:w-3/5 p-10 md:p-16 flex flex-col justify-center animate-fade-in-up">
+                    <form id="registration-form" class="space-y-8">
+                        <div class="space-y-6">
+                            <div class="group">
+                                <label for="fullName" class="text-xs font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-blue-600 transition-colors">Full Name</label>
+                                <div class="relative mt-2">
+                                    <User class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+                                    <input type="text" id="fullName" required placeholder="Enter your full name" 
+                                           class="w-full bg-gray-50 border-2 border-transparent focus:border-blue-600 active:border-blue-600 outline-none rounded-2xl py-4 pl-12 pr-6 transition-all font-medium text-[#001F3F] placeholder-[#001F3F]/30" />
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <label for="email" class="text-xs font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-blue-600 transition-colors">Email Address</label>
+                                <div class="relative mt-2">
+                                    <Mail class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+                                    <input type="email" id="email" required placeholder="john@example.com" 
+                                           class="w-full bg-gray-50 border-2 border-transparent focus:border-blue-600 outline-none rounded-2xl py-4 pl-12 pr-6 transition-all font-medium text-[#001F3F] placeholder-[#001F3F]/30" />
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="group">
+                                    <label for="college" class="text-xs font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-blue-600 transition-colors">Department</label>
+                                    <div class="relative mt-2">
+                                        <School class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+                                        <input type="text" id="dept" required placeholder="e.g. CSE" 
+                                               class="w-full bg-gray-50 border-2 border-transparent focus:border-blue-600 outline-none rounded-2xl py-4 pl-12 pr-6 transition-all font-medium text-[#001F3F] placeholder-[#001F3F]/30" />
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <label for="year" class="text-xs font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-blue-600 transition-colors">Year of Study</label>
+                                    <div class="relative mt-2">
+                                        <GraduationCap class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+                                        <select id="year" required class="w-full bg-gray-50 border-2 border-transparent focus:border-blue-600 outline-none rounded-2xl py-4 pl-12 pr-6 transition-all font-medium text-[#001F3F] appearance-none">
+                                            <option value="" disabled selected>Select year</option>
+                                            <option value="1">1st Year</option>
+                                            <option value="2">2nd Year</option>
+                                            <option value="3">3rd Year</option>
+                                            <option value="4">4th Year</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-[#001F3F] text-white py-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform active:scale-95 font-bold text-lg flex items-center justify-center gap-3">
+                            Confirm Registration
+                            <ChevronRight class="w-5 h-5" />
+                        </button>
+
+                        <p class="text-center text-sm text-gray-400 font-medium">
+                            By registering, you agree to our <a href="#" class="text-blue-600 hover:underline">Code of Conduct</a>.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    /* Select styling fallback */
+    select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23001F3F'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1.5rem center;
+        background-size: 1.5em;
+    }
+
+    @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slide-right {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    .animate-fade-in { animation: fade-in 1s ease-out; }
+    .animate-fade-in-up { animation: fade-in-up 0.8s ease-out; }
+    .animate-slide-right { animation: slide-right 1s ease-out; }
+</style>
