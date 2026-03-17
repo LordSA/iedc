@@ -1,62 +1,66 @@
 ---
-import { BrainCircuit, Lightbulb, Users, Target } from 'lucide-astro';
+import { BrainCircuit, Lightbulb, Users, Target, MoveRight, Calendar, UserCheck } from 'lucide-astro';
 ---
 
-<section id="about" class="py-40 bg-white relative overflow-hidden">
+<section id="about" class="py-24 bg-white relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
     
     <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col lg:flex-row items-start gap-16 lg:gap-32">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
             <div class="lg:w-1/2">
-                <div class="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] mb-8 rounded-lg">
-                    Our Mission
+                <div class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-[9px] font-black uppercase tracking-[0.3em] mb-6 rounded-lg">
+                    The Bootcamp
                 </div>
                 
-                <h2 class="text-4xl md:text-7xl font-black text-[#001F3F] mb-10 font-montserrat uppercase italic leading-[0.95]">
-                    Vision <span class="text-blue-600 underline decoration-blue-100 decoration-8 underline-offset-4">2026</span><br/>and beyond.
+                <h2 class="text-4xl md:text-6xl font-black text-[#001F3F] mb-6 font-montserrat uppercase italic leading-[0.95]">
+                    Startup <span class="text-blue-600 underline decoration-blue-100 decoration-4 underline-offset-4">Bootcamp</span><br/>2026.
                 </h2>
                 
-                <p class="text-xl text-gray-400 font-medium leading-relaxed mb-12 max-w-xl">
-                    The IEDC CEV Bootcamp is more than a gathering—it's the official transition to 
-                    a new era of campus innovation. We are meeting to introduce our new executive 
-                    leaders and set a bold path for the upcoming year.
+                <p class="text-lg text-gray-400 font-medium leading-relaxed mb-8 max-w-xl">
+                    The IEDC CEV Startup Bootcamp is a high-intensity program designed to 
+                    transform students into entrepreneurs. From ideation workshops to 
+                    investor-ready pitching, we provide the ultimate ecosystem for campus founders.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="group">
                         <div class="w-12 h-12 bg-[#fafafa] border border-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:border-blue-700 transition-all duration-300">
-                            <BrainCircuit class="w-6 h-6 text-[#001F3F] group-hover:text-white transition-colors" />
+                            <UserCheck class="w-6 h-6 text-[#001F3F] group-hover:text-white transition-colors" />
                         </div>
-                        <h3 class="text-lg font-black font-montserrat uppercase italic mb-3">Execom Reveal</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed font-medium">Official induction of the leaders driving innovation this year.</p>
+                        <h3 class="text-lg font-black font-montserrat uppercase italic mb-3">Eligibility</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-medium capitalize">Exclusive to registered IEDC members of CEV.</p>
                     </div>
                     
                     <div class="group">
                         <div class="w-12 h-12 bg-[#fafafa] border border-gray-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:border-blue-700 transition-all duration-300">
-                            <Lightbulb class="w-6 h-6 text-[#001F3F] group-hover:text-white transition-colors" />
+                            <Calendar class="w-6 h-6 text-[#001F3F] group-hover:text-white transition-colors" />
                         </div>
-                        <h3 class="text-lg font-black font-montserrat uppercase italic mb-3">Future Planning</h3>
-                        <p class="text-sm text-gray-500 leading-relaxed font-medium">Strategic brainstorming for state-level hackathons and summits.</p>
+                        <h3 class="text-lg font-black font-montserrat uppercase italic mb-3">The Schedule</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-medium">Coming soon — 3 days of workshops, networking, and pitching.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="lg:w-1/2 w-full grid grid-cols-2 gap-4">
-                 <div class="bg-blue-600 aspect-square rounded-[2.5rem] p-10 flex flex-col justify-end text-white hover:rotate-3 transition-transform duration-500 shadow-xl shadow-blue-500/10">
-                     <Users class="w-8 h-8 mb-auto opacity-50" />
-                     <span class="text-5xl font-black font-montserrat uppercase italic leading-none mb-2">500+</span>
-                     <span class="text-xs font-bold uppercase tracking-widest opacity-70">Community</span>
+            <div class="lg:w-1/2 w-full grid grid-cols-2 gap-3">
+                 <div class="bg-blue-600 aspect-square rounded-[2rem] p-8 flex flex-col justify-end text-white hover:rotate-2 transition-transform duration-500 shadow-xl shadow-blue-500/10">
+                     <Users class="w-6 h-6 mb-auto opacity-50" />
+                     <span class="text-4xl font-black font-montserrat uppercase italic leading-none mb-2">500+</span>
+                     <span class="text-[10px] font-bold uppercase tracking-widest opacity-70">Community</span>
                  </div>
-                 <div class="bg-[#fafafa] border border-gray-100 aspect-square rounded-[2.5rem] p-10 flex flex-col justify-end group hover:bg-white hover:border-blue-600 transition-all duration-500">
-                     <Target class="w-8 h-8 mb-auto text-blue-600" />
-                     <span class="text-lg font-black font-montserrat uppercase italic leading-tight mb-2 text-[#001F3F]">Co-Working Space</span>
-                     <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400">24/7 Innovation Lab</span>
+                 <div class="bg-[#fafafa] border border-gray-100 aspect-square rounded-[2rem] p-8 flex flex-col justify-end group hover:bg-white hover:border-blue-600 transition-all duration-500">
+                     <Target class="w-6 h-6 mb-auto text-blue-600" />
+                     <span class="text-base font-black font-montserrat uppercase italic leading-tight mb-2 text-[#001F3F]">Co-Working Space</span>
+                     <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Innovation Lab</span>
                  </div>
-                 <div class="col-span-2 bg-[#001F3F] rounded-[2.5rem] p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 group overflow-hidden relative">
-                     <div class="absolute -right-10 -bottom-10 text-[120px] font-black text-white/5 italic font-montserrat">CEV</div>
-                     <div class="relative z-10 w-full text-center md:text-left">
-                         <h4 class="text-2xl md:text-3xl font-black font-montserrat uppercase italic leading-tight mb-4">Innovation First.</h4>
-                         <p class="text-blue-200/60 max-w-md font-medium italic">Our on-campus hub remains open for all members to build, test, and strategize throughout the bootcamp week and beyond.</p>
+                 <div class="col-span-2 bg-[#001F3F] rounded-[2rem] p-10 text-white flex flex-col items-center justify-between gap-6 group overflow-hidden relative">
+                     <div class="absolute -right-10 -bottom-10 text-[100px] font-black text-white/5 italic font-montserrat">CEV</div>
+                     <div class="relative z-10 w-full text-center">
+                         <h4 class="text-xl md:text-2xl font-black font-montserrat uppercase italic leading-tight mb-3">Induction Protocol.</h4>
+                         <p class="text-blue-200/60 max-w-md mx-auto font-medium italic mb-6 text-sm">Official induction for the 2026 Executive Committee.</p>
+                         <a href="/register" class="inline-flex items-center gap-3 bg-white text-[#001F3F] px-8 py-3 rounded-full font-black uppercase italic tracking-widest text-[11px] hover:bg-blue-600 hover:text-white transition-all group shadow-xl">
+                            Register Now
+                            <MoveRight class="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                        </a>
                      </div>
                  </div>
             </div>
