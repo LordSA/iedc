@@ -77,8 +77,8 @@ import { Menu, X, ArrowRight } from 'lucide-astro';
       <X class="h-6 w-6 text-[#001F3F]" />
     </button>
 
-    <div class="flex flex-col items-center space-y-8">
-      <a href="#" class="mobile-link nav-link-anim text-4xl font-black font-montserrat uppercase italic text-[#001F3F] hover:text-blue-600 transition-colors tracking-tighter">
+    <div class="flex flex-col items-center space-y-8 relative z-10 w-full px-6 text-center">
+      <a href="/" class="mobile-link nav-link-anim text-4xl font-black font-montserrat uppercase italic text-[#001F3F] hover:text-blue-600 transition-colors tracking-tighter">
         Home
       </a>
       <a href="#about" class="mobile-link nav-link-anim text-4xl font-black font-montserrat uppercase italic text-[#001F3F] hover:text-blue-600 transition-colors tracking-tighter">
@@ -87,7 +87,10 @@ import { Menu, X, ArrowRight } from 'lucide-astro';
       <a href="#gallery" class="mobile-link nav-link-anim text-4xl font-black font-montserrat uppercase italic text-[#001F3F] hover:text-blue-600 transition-colors tracking-tighter">
         Gallery
       </a>
-      <a href="/register" class="mobile-link nav-link-anim px-10 py-4 bg-[#001F3F] text-white rounded-full text-sm font-black uppercase italic tracking-widest hover:bg-blue-600 transition-all shadow-xl shadow-blue-900/10">
+      <a 
+        href="/register" 
+        class="mobile-link nav-link-reg px-12 py-5 bg-[#1A4C96] text-white rounded-full text-xs font-black uppercase italic tracking-tighter hover:bg-blue-700 transition-all shadow-[0_20px_40px_rgba(26,76,150,0.3)] mt-4 inline-block"
+      >
         Register Now
       </a>
     </div>
@@ -129,13 +132,28 @@ import { Menu, X, ArrowRight } from 'lucide-astro';
         document.body.style.overflow = 'hidden';
 
         gsap.from(".nav-link-anim", {
-          y: 40,
+          y: 60,
           opacity: 0,
-          duration: 0.6,
+          duration: 0.8,
           stagger: 0.1,
           ease: "power3.out",
           delay: 0.2
         });
+
+        gsap.fromTo(".nav-link-reg", 
+          {
+            y: 40,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: 0.5,
+            clearProps: "all"
+          }
+        ); 
       } else {
         mobileOverlay.classList.remove('translate-y-0', 'pointer-events-auto');
         mobileOverlay.classList.add('-translate-y-full', 'pointer-events-none');
